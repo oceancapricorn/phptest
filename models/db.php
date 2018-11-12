@@ -21,8 +21,6 @@ class DB {
 		} else {
 			return $conn;
 		}
-	}
-	
-	
+	}	
 }
 

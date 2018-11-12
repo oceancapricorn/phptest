@@ -1,5 +1,3 @@
-
-
 let check = function() {
       if (document.getElementById('password').value ==
           document.getElementById('confirm_password').value) {

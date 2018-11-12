@@ -11,21 +11,22 @@ class User extends DB {
  	    $result = $this->connect()->query($sql);
         if ($result) {  
          $numRows = $result->num_rows;
-         if($numRows > 0) {
-         // Using session variables to login user
+       	  if($numRows > 0) {
+         	// Using session variables to login user
          	$row = $result->fetch_array();
-             $_SESSION['login'] = true;  
-             $_SESSION['id'] = $row['id'];  
-             return true;  
-         } else {
-          return false;
-         }
-        } else {  
+            $_SESSION['login'] = true;  
+            $_SESSION['id'] = $row['id'];  
+            return true;  
+        	 } else {
+          	return false;
+    		 }
+        	} else {  
             return false;  
         }  
-    }
- // User registration
-public function register($date, $name, $username, $email, $password) {  
+   	 }
+
+	 // User registration
+	public function register($date, $name, $username, $email, $password) {  
 	// Hash pasword
         $password = md5($password);  
         // If user already exist
@@ -35,18 +36,18 @@ public function register($date, $name, $username, $email, $password) {
          if (!$numRows) {
          	// Insert new user
              $sql = "INSERT into users (date, name, username, email, password) values ('$date','$name','$username','$email','$password')";
-          $register = $this->connect()->query($sql);  
+         	 $register = $this->connect()->query($sql);  
              return $register;  
-         } else {
-          return false; 
-         }
-        } else {  
+        	 } else {
+         	 return false; 
+       		 }
+       		 } else {  
             return false;  
         }  
     }
 
     // Function to grab user fullname
-       public function fullname($id) {  
+    public function fullname($id) {  
        $sql = "SELECT * FROM users WHERE id='$id'";
        $result = $this->connect()->query($sql);
         $row = $result->fetch_array();
@@ -54,7 +55,7 @@ public function register($date, $name, $username, $email, $password) {
     }
 
     // Check if user is already logged in
-        public function session() {  
+    public function session() {  
         if (isset($_SESSION['login'])) {  
         return $_SESSION['login'];  
         }  
@@ -62,23 +63,19 @@ public function register($date, $name, $username, $email, $password) {
 
 
     // Search all user based on the search term
-       public function searchUsers($name) {  
+    public function searchUsers($name) {  
        $sql = "SELECT name FROM users WHERE name LIKE '$name%' OR email LIKE '$name%'";
        $result = $this->connect()->query($sql);
        if($result) {
         $numRows = $result->num_rows;
         if($numRows > 0) {
         while($row = $result->fetch_assoc()) {
-     	$data[] = $row;
-
-     
-    }
-
-         return $data;
-        }
-        
-       }
-    }
+     	$data[] = $row;    
+   	    }
+		return $data;
+        } 
+      }
+   }
 }
 
 

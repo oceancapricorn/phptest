@@ -11,22 +11,20 @@ require_once 'models/users.php';
       	$register = $user->register($date,$_REQUEST['name'],$_REQUEST['username'],$_REQUEST['email'],$_REQUEST['password']);
       	 if($register){  
          echo "Registration Successful!";  
-      }
-      else
+      } else
       {  
          echo "Entered email already exist!";  
       }  
       } else {
       	echo "Password Don't Match";
-      }
-        
-     
+      }   
    }
 
 
  ?>
+ <link rel="stylesheet" type="text/css" href="css/main.css">
  <script src="js/main.js"></script>
- <div class="form">  
+ <div class="form" id="showcase">  
     <h1>Registration</h1>  
     <form action="" method="post">  
     	<label for="name">Name</label>
@@ -46,7 +44,7 @@ require_once 'models/users.php';
         <br> 
         <span id='message'></span>
         <br>
-        <input type="submit" name="submit" value="Register" />  
+        <input class="button" type="submit" name="submit" value="Register" />  
     </form>  
-    <p>Alredy Registered?<a href="login.php"> Login Here</a></p>  
+    <p>Alredy Registered?<br><a href="login.php"> Login Here</a></p>  
 </div>
