@@ -10,8 +10,9 @@ class User extends DB {
         if ($result) {  
          $numRows = $result->num_rows;
          if($numRows > 0) {
+         	$row = $result->fetch_array();
              $_SESSION['login'] = true;  
-             $_SESSION['id'] = $data['id'];  
+             $_SESSION['id'] = $row['id'];  
              return true;  
          } else {
           return false;
@@ -25,16 +26,25 @@ class User extends DB {
 public function register($date, $name, $username, $email, $password) {  
         $password = md5($password);  
         $checkUser = $this->connect()->query("SELECT id FROM users WHERE email='$email'");  
-        if ($result) {  
-         $numRows = $result->num_rows;
+        if ($checkUser) {  
+         $numRows = $checkUser->num_rows;
          if (!$numRows) {
              $sql = "INSERT into users (date, name, username, email, password) values ('$date','$name','$username','$email','$password')";
           $register = $this->connect()->query($sql);  
              return $register;  
+         } else {
+          return false; 
          }
         } else {  
             return false;  
         }  
+    }
+
+          function fullname($id) {  
+       $sql = "SELECT * FROM users WHERE id='$id'";
+       $result = $this->connect()->query($sql);
+        $row = $result->fetch_array();
+        echo $row['name'];  
     }
 }
 

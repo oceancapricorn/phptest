@@ -1,16 +1,5 @@
 <?php
 
-/*define('HOST', 'localhost');  
-define('USER', 'root');  
-define('PASS', '');  
-define('DB', 'testphp');
-
-class DB  {  
-    function __construct() {  
-        $con = mysqli_connect(HOST, USER, PASS) or die('Connection Error! '.mysql_error());  
-        mysql_select_db(DB, $con) or die('DB Connection Error: ->'.mysql_error());  
-    }  
-}*/
 
 class DB {
 	private $host;
