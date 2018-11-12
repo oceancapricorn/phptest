@@ -7,7 +7,9 @@ require_once 'models/users.php';
 
 
  	$user = new User();  
+ 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){  
+    	// Login User
       $login = $user->login($_REQUEST['email'], $_REQUEST['password']);  
       if($login){  
          header("location:loginSuccess.php");  

@@ -14,6 +14,7 @@ class DB {
 		$this->password = "";
 		$this->dbname = "testphp";
 		
+		// Connect to the database
 		$conn = new mysqli($this->host, $this->username, $this->password, $this->dbname);
 		if ($conn->connect_errno) {
     		die("Failed to connect to MySQL: (".$conn->connect_errno.") ".$conn->connect_error);
