@@ -6,7 +6,7 @@ class User extends DB {
 	// Check if user is already logged in
 	public function login($email, $password) {
 	 // Hash password 
-        $password = md5($password);  
+      $password = md5($password);  
   		$sql = "Select * FROM users WHERE email='$email' AND password='$password'";
  	    $result = $this->connect()->query($sql);
         if ($result) {  

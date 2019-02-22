@@ -21,16 +21,20 @@ require_once 'models/users.php';
   	}
 
 ?>
-
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<div class="form" id="showcase">  
-    <h1>Log In</h1>  
-    <form action="" method="post">  
-        <input type="text" name="email" placeholder="Please Enter Email" required />  
-        <br />  
-        <input type="password" name="password" placeholder="Please Enter Password" required />  
-        <br />  
-        <input class="button" type="submit" name="submit" value="Login" />  
-    </form>  
-    <p>Not registered yet?<br><a href="register.php"> Register Here</a></p>  
-</div>
+<script src="js/main.js"></script>
+<section>
+    <div class="container">  
+        <div class="content">
+            <h1>Login</h1>  
+            <form action="" method="post">  
+                <input type="text" onfocus="this.value=''" name="email" placeholder="Please Enter Email" required />  
+                <br />  
+                <input type="password" onfocus="this.value=''" name="password" placeholder="Please Enter Password" required />  
+                <br />  
+                <input class="button" type="submit" name="submit" value="Login" />  
+            </form>  
+            <p>Not registered yet?<br><a href="register.php"> Register Here</a></p>  
+        </div>
+    </div>
+</section>

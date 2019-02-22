@@ -10,6 +10,10 @@ require_once 'models/users.php';
  ?>
 
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<div class="form" id="showcase">  
-    <h1>Welcome <?php $user->fullname($id);?></h1>  
-</div>
+<section>
+    <div class="container">  
+        <div class="content">
+             <h1>Welcome <?php $user->fullname($id);?></h1> 
+        </div> 
+    </div>
+</section>

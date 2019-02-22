@@ -1,56 +1,100 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
-
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed: 700");
 
 body {
-	margin: 0;
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 17px;
-	color: #926239;
-	line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 2px;
 }
 
-
-a {
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 25px;
-	text-decoration: none;
+section {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/showcase.jpg) no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
-
-a:hover {
-	color: #BDCBFF;
-}
-#showcase {
-	background-image: url(../img/showcase.jpg);
-	background-size: cover;
-	background-position: center;
-	background: opacity 0.8;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	padding: 0 20px;
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  text-align: center;
 }
 
-#showcase .button {
-	font-size: 18px;
-	text-decoration: none;
-	color: #926239;
-	border: #926239 1px solid;
-	padding: 10px 20px;
-	border-radius: 10px;
-	margin-top: 20px;
+.content {
+  position: relative;
+  box-sizing: border-box;
+  padding: 1.75rem 1.85rem;
+  transition: 0.5s;
 }
 
-#showcase .button:hover {
-	background: #926239;
-	color: #fff;
+/* .content:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+} */
+
+.content h1 {
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
+.content input {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #fff;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.content input:focus {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.content input::placeholder {
+  color: #fff;
+  text-align: center;
+}
+
+.content input[type="submit"] {
+  color: #fff;
+  background: #0072ff;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.content input[type="submit"]:hover {
+  background: #005aca;
+  transition: 0.8s ease-in-out;
+}
+
+.content form {
+  margin-top: 1.7rem;
+}
+
+.content a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+.content a:hover {
+  color: #ccc;
+  transition: 0.7s;
+}

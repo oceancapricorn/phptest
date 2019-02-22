@@ -24,27 +24,26 @@ require_once 'models/users.php';
  ?>
  <link rel="stylesheet" type="text/css" href="css/main.css">
  <script src="js/main.js"></script>
- <div class="form" id="showcase">  
-    <h1>Registration</h1>  
-    <form action="" method="post">  
-    	<label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="Please Enter Name" required />  
-        <br>  
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Please Enter Userame" required />  
-        <br>  
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="Please Enter Email" required />  
-        <br>  
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Please Enter Password" onkeyup='check();' required />  
-        <br> 
-        <label for="confirm_password">Confirm Password</label>
-        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" onkeyup='check();' required /> 
-        <br> 
-        <span id='message'></span>
-        <br>
-        <input class="button" type="submit" name="submit" value="Register" />  
-    </form>  
-    <p>Alredy Registered?<br><a href="login.php"> Login Here</a></p>  
-</div>
+ <section>
+     <div class="container">  
+        <div class="content">
+            <h1>Registration</h1>  
+            <form action="" method="post">  
+                <input type="text" name="name" id="name" placeholder="Please Enter Name" required />  
+                <br>  
+                <input type="text" name="username" id="username" placeholder="Please Enter Userame" required />  
+                <br>  
+                <input type="text" name="email" id="email" placeholder="Please Enter Email" required />  
+                <br>  
+                <input type="password" name="password" id="password" placeholder="Please Enter Password" onkeyup='check();' required />  
+                <br> 
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" onkeyup='check();' required /> 
+                <br> 
+                <span id='message'></span>
+                <br>
+                <input class="button" type="submit" name="submit" value="Register" />  
+            </form>  
+            <p>Alredy Registered?<br><a href="login.php"> Login Here</a></p>    
+        </div>
+    </div>
+</section>
